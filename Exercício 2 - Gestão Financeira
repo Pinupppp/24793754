@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    float receita, despesa;
+    float saldo;
+
+    // Solicita ao usuário para inserir a receita
+    printf("Digite o valor da receita: ");
+    scanf("%f", &receita);
+
+    // Solicita ao usuário para inserir a despesa
+    printf("Digite o valor da despesa: ");
+    scanf("%f", &despesa);
+
+    // Calcula o saldo
+    saldo = receita - despesa;
+
+    // Exibe o saldo atualizado
+    printf("Saldo atualizado: R$ %.2f\n", saldo);
+
+    return 0;
+}
