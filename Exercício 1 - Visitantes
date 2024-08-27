@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int numero_de_visitantes;
+
+    // Solicita ao recepcionista que insira o número de visitantes
+    printf("Digite o número de visitantes que entraram na empresa hoje: ");
+    scanf("%d", &numero_de_visitantes);
+
+    // Exibe uma mensagem de confirmação
+    printf("Número de visitantes registrado: %d\n", numero_de_visitantes);
+    printf("Obrigado! O número de visitantes foi registrado com sucesso.\n");
+
+    return 0;
+
+}
