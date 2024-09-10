@@ -1,0 +1,60 @@
+//Desafio - Lista 1
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+
+    //Preços e dividendos por ação
+    float precoAcao1 = 24.13, precoAcao2 = 11.00, precoAcao3 = 38.65;
+    float dividendoAcao1 = 17.00, dividendoAcao2 = 35.00, dividendoAcao3 = 25.00;
+
+    //Valor ser investido
+    float valorTotal = 1000.00;
+
+    //Quantidade de ações adquiridas
+    int quantidadeAcao1, quantidadeAcao2, quantidadeAcao3;
+
+    //Valor investido em cada ação
+    float valorInvestidoAcao1, valorInvestidoAcao2, valorInvestidoAcao3;
+
+    //Usuário entra com a quantidade de ações a serem compradas
+    printf("Digite a quantidade de ações da Ação 1 que deseja comprar: ");
+    scanf("%d", &quantidadeAcao1);
+
+    printf("Digite a quantidade de ações da Ação 2 que deseja comprar: ");
+    scanf("%d", &quantidadeAcao2);
+
+    printf("Digite a quantidade de ações da Ação 3 que deseja comprar: ");
+    scanf("%d", &quantidadeAcao3);
+
+    // Calcular valor investido em cada ação
+    valorInvestidoAcao1 = quantidadeAcao1 * precoAcao1;
+    valorInvestidoAcao2 = quantidadeAcao2 * precoAcao2;
+    valorInvestidoAcao3 = quantidadeAcao3 * precoAcao3;
+
+    //Calcular o dividendo Yield (DY) de cada ação
+    float dyAcao1 = (dividendoAcao1 / precoAcao1) * 100;
+    float dyAcao2 = (dividendoAcao2 / precoAcao2) * 100;
+    float dyAcao3 = (dividendoAcao3 / precoAcao3) * 100;
+
+    // Verificar se o valor investido é suficiente
+    if (valorInvestidoAcao1 + valorInvestidoAcao2 + valorInvestidoAcao3 > valorTotal) {
+        printf("O valor total investido excede o valor disponível de R$1000,00.\n");
+        return 1;
+    }
+
+    // Exibir resultados
+    printf("\nValor investido em cada ação:\n");
+    printf("Ação 1: R$%.2f (Quantidade: %d)\n", valorInvestidoAcao1, quantidadeAcao1);
+    printf("Ação 2: R$%.2f (Quantidade: %d)\n", valorInvestidoAcao2, quantidadeAcao2);
+    printf("Ação 3: R$%.2f (Quantidade: %d)\n", valorInvestidoAcao3, quantidadeAcao3);
+
+    printf("\nDividend Yield (DY) de cada ação:\n");
+    printf("Ação 1: %.2f%%\n", dyAcao1);
+    printf("Ação 2: %.2f%%\n", dyAcao2);
+    printf("Ação 3: %.2f%%\n", dyAcao3);
+
+    return 0;
+}
