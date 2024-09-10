@@ -1,0 +1,395 @@
+//Exercício 1 - Script's corrigidos
+
+//A)
+#include <iostream>
+using namespace std;
+
+int main() {
+    unsigned int n = 4000000000;
+// %u é o especificador para unsigned int
+    printf("%u\n", n);  
+    return 0;
+}
+
+//B)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a;
+    printf("%d\n", a);  
+// Inicialize "a"
+    a = 10;             
+    printf("%d\n", a);
+    return 0;
+}
+
+//C)
+#include <iostream>
+using namespace std;
+
+int main() {
+    printf("%d", 4);
+    printf("%d", 2);
+    return 0;
+}
+
+//D)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a;
+    scanf("%d", &a);  
+    printf("%d\n", a);
+    return 0;
+}
+
+//Exercício 2.A) - Ler números na ordem inversa
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, num3;
+
+    // Ler números
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);
+    printf("Digite o terceiro número: ");
+    scanf("%d", &num3);
+
+    // Imprimir números na ordem inversa
+    printf("Ordem inversa: %d, %d, %d\n", num3, num2, num1);
+
+    return 0;
+}
+
+//2.B) - Conversa computador e usuário
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+//Variável
+    char nome; 
+
+//Exibir mensagem inicial
+    printf("Olá eu sou o Nº 1, como é seu nome?\n");
+
+//Ler nome digitado pelo usuário
+    scanf("%49s", nome); 
+
+//Exibir mensagem de boas-vindas
+    printf("Bem-vindo ao clube, %s!\n", nome);
+
+    return 0;
+}
+
+//2.C) - Idade do usuário
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    char nome[50];  
+    int idade;      
+    int diasDeVida; 
+
+    // Perguntar nome
+    printf("Qual é o seu nome?\n");
+    scanf("%49s", nome);
+
+    // Perguntar idade
+    printf("Qual é a sua idade?\n");
+    scanf("%d", &idade);
+
+    // Calcular dias de vida (aproximadamente)
+    diasDeVida = idade * 365; 
+
+    //Resultado
+    printf("%s, você viveu aproximadamente %d dias.\n", nome, diasDeVida);
+
+    return 0;
+}
+
+//2.D) - Raio do círculo
+
+#include <iostream>
+#include <math.h>
+#define PI 3.14159 
+using namespace std;
+
+int main() {
+    float raio, area;
+
+    // Perguntar raio do círculo
+    printf("Digite o raio do círculo: ");
+    scanf("%f", &raio);
+
+    // Calcular área do círculo (fórmula: A = PI * r²)
+    area = PI * raio * raio;
+
+    // Exibir resultado
+    printf("A área do círculo com raio %.2f é %.2f\n", raio, area);
+
+    return 0;
+}
+
+//2.E) - Latas de tinta
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+    float largura, altura, area, consumoTinta, litrosPorLata;
+    int latasNecessarias;
+
+    // Consumo de tinta e capacidade da lata
+    consumoTinta = 0.3;  
+    litrosPorLata = 2.0;
+
+    // Dimensões da parede
+    printf("Digite a largura da parede em metros: ");
+    scanf("%f", &largura);
+
+    printf("Digite a altura da parede em metros: ");
+    scanf("%f", &altura);
+
+    // Calcular área da parede
+    area = largura * altura;
+
+    // Calcular quantidade de tinta necessária (em litros)
+    float litrosNecessarios = area * consumoTinta;
+
+    // Calcular número de latas necessárias (arredondando)
+    latasNecessarias = (int)(litrosNecessarios / litrosPorLata);
+
+    if (litrosNecessarios - latasNecessarias * litrosPorLata > 0) {
+        latasNecessarias += 1;  // Se houver necessidade de mais uma lata parcial, soma uma lata
+    }
+
+    // Exibe o resultado
+    printf("Você precisará de %d lata(s) de tinta para pintar a parede.\n", latasNecessarias);
+
+    return 0;
+}
+
+//2.F) - Graus Farenheit e Centígrados
+
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main() {
+    float fahrenheit, celsius;
+
+    // Pergunta a temperatura em Fahrenheit
+    printf("Digite a temperatura em graus Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+
+    // Converte Fahrenheit para Celsius usando a fórmula: C = (5/9) * (F - 32)
+    celsius = (5.0 / 9.0) * (fahrenheit - 32);
+
+    // Exibe o resultado
+    printf("A temperatura em graus Celsius é: %.2f\n", celsius);
+
+    return 0;
+}
+
+//2.G) - Pneu
+
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main() {
+    float P, V, T, M;
+
+    //Valores de pressão, volume e temperatura
+    printf("Digite a pressão (P) do pneu: ");
+    scanf("%f", &P);
+
+    printf("Digite o volume (V) do pneu: ");
+    scanf("%f", &V);
+
+    printf("Digite a temperatura (T) do pneu em graus Fahrenheit: ");
+    scanf("%f", &T);
+
+    //Calcular massa de ar (M) usando a fórmula: M = PV / (0.37 * (T + 460))
+    M = (P * V) / (0.37 * (T + 460));
+
+    // Exibir resultado
+    printf("A massa de ar no pneu é: %.2f\n", M);
+
+    return 0;
+}
+
+//2.H) - Progressão Aritmética
+
+#include <iostream>;
+#include <math.h>;
+using namespace std;
+
+int main() {
+    int a1, r, n, an;
+
+    // Primeiro termo (a1), a razão (r) e o número de termos (n)
+    printf("Digite o primeiro termo da PA (a1): ");
+    scanf("%d", &a1);
+
+    printf("Digite a razão da PA (r): ");
+    scanf("%d", &r);
+
+    printf("Digite o número N para calcular o N-ésimo termo: ");
+    scanf("%d", &n);
+
+    // Calcular o N-ésimo termo da PA usando a fórmula: an = a1 + (n - 1) * r
+    an = a1 + (n - 1) * r;
+
+    // Exibir resultado
+    printf("O %d-ésimo termo da PA é: %d\n", n, an);
+
+    return 0;
+}
+
+//2.I) - Coeficientes equação de segundo grau
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+    float a, b, c, delta, raiz1, raiz2;
+
+    //Coeficientes a, b, c
+    printf("Digite o coeficiente a (a != 0): ");
+    scanf("%f", &a);
+
+    // Verificação
+    if (a == 0) {
+        printf("Coeficiente 'a' não pode ser zero em uma equação de segundo grau.\n");
+        return 1;  // Encerra o programa com erro
+    }
+
+    printf("Digite o coeficiente b: ");
+    scanf("%f", &b);
+
+    printf("Digite o coeficiente c: ");
+    scanf("%f", &c);
+
+    //Calcular discriminante (delta)
+    delta = (b * b) - (4 * a * c);
+
+    //Verificar condições do delta
+    if (delta > 0) {
+        // Duas raízes reais e distintas
+        raiz1 = (-b + sqrt(delta)) / (2 * a);
+        raiz2 = (-b - sqrt(delta)) / (2 * a);
+        printf("As raízes da equação são: %.2f e %.2f\n", raiz1, raiz2);
+
+    } else if (delta == 0) {
+        // Raiz real e dupla
+        raiz1 = -b / (2 * a);
+        printf("A equação possui uma única raiz: %.2f\n", raiz1);
+
+    } else {
+        // Delta negativo, sem raízes reais
+        printf("A equação não possui raízes reais.\n");
+    }
+
+    return 0;
+}
+
+//2.J) - Contar dinheiro
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int notas1, notas10, notas50, notas100;
+    int total;
+
+    // Perguntar quantidade de notas
+    printf("Digite a quantidade de notas de 1 real: ");
+    scanf("%d", &notas1);
+
+    printf("Digite a quantidade de notas de 10 reais: ");
+    scanf("%d", &notas10);
+
+    printf("Digite a quantidade de notas de 50 reais: ");
+    scanf("%d", &notas50);
+
+    printf("Digite a quantidade de notas de 100 reais: ");
+    scanf("%d", &notas100);
+
+    // Calcular valor total
+    total = (notas1 * 1) + (notas10 * 10) + (notas50 * 50) + (notas100 * 100);
+
+    // Exibir valor total
+    printf("O valor total em dinheiro é: R$ %d\n", total);
+
+    return 0;
+}
+
+//2.L) - Contar dinheiro pt.2
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int valor, notas100, notas50, notas10, notas5, notas1;
+
+    // Perguntar valor total
+    printf("Digite o valor total em reais: ");
+    scanf("%d", &valor);
+
+    // Calcular notas de 100 reais
+    notas100 = valor / 100;
+    valor = valor % 100;
+
+    // Calcular notas de 50 reais
+    notas50 = valor / 50;
+    valor = valor % 50;
+
+    // Calcular notas de 10 reais
+    notas10 = valor / 10;
+    valor = valor % 10;
+
+    // Calcular notas de 5 reais
+    notas5 = valor / 5;
+    valor = valor % 5;
+
+    // O restante será a quantidade de notas de 1 real
+    notas1 = valor;
+
+    // Exibir quantidade de notas necessárias
+    printf("Notas de 100 reais: %d\n", notas100);
+    printf("Notas de 50 reais: %d\n", notas50);
+    printf("Notas de 10 reais: %d\n", notas10);
+    printf("Notas de 5 reais: %d\n", notas5);
+    printf("Notas de 1 real: %d\n", notas1);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
